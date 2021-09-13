@@ -8,9 +8,9 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : ''}}" href="/dashboard/posts">
-          <span data-feather="file-text"></span>
-          My Posts
+        <a class="nav-link {{ Request::is('dashboard/students*') ? 'active' : ''}}" href="/dashboard/students">
+          <span data-feather="users"></span>
+          Siswa
         </a>
       </li>
     </ul>

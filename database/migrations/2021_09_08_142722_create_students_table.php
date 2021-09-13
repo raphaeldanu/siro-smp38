@@ -17,7 +17,8 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('nisn', 10);
             $table->string('nis', 6);
-            $table->string('nama');
+            $table->string('nama', 150);
+            $table->smallInteger('tahun_masuk')->nullable();
             $table->timestamps();
         });
     }

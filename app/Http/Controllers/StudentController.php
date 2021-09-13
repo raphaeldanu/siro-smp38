@@ -14,7 +14,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.students.index', [
+            'title' => 'Students',
+            'students' => Student::all()
+        ]);
     }
 
     /**

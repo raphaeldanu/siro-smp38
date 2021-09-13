@@ -21,9 +21,7 @@ class CreateStudentReportsTable extends Migration
             $table->integer('semester');
             $table->string('tahun_pelajaran', 10);
             $table->string('sikap_spiritual');
-            $table->text('deskripsi_sikap_spiritual');
             $table->string('sikap_sosial');
-            $table->text('deskripsi_sikap_sosial');
             $table->integer('n_agama');
             $table->integer('n_ppkn');
             $table->integer('n_bindo');
@@ -38,7 +36,6 @@ class CreateStudentReportsTable extends Migration
             $table->integer('sakit');
             $table->integer('izin');
             $table->integer('tanpa_ket');
-            $table->text('catatan_wali_kelas');
             $table->timestamps();
         });
     }
