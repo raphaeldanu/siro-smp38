@@ -16,26 +16,27 @@ class CreateStudentReportsTable extends Migration
         Schema::create('student_reports', function (Blueprint $table) {
             $table->id();
             $table->foreignId('student_id');
-            $table->integer('kelas');
+            $table->smallInteger('kelas');
             $table->string('rombel', 1);
-            $table->integer('semester');
+            $table->smallInteger('semester');
             $table->string('tahun_pelajaran', 10);
-            $table->string('sikap_spiritual');
-            $table->string('sikap_sosial');
-            $table->integer('n_agama');
-            $table->integer('n_ppkn');
-            $table->integer('n_bindo');
-            $table->integer('n_mat');
-            $table->integer('n_ipa');
-            $table->integer('n_ips');
-            $table->integer('n_bing');
-            $table->integer('n_seni');
-            $table->integer('n_penjas');
-            $table->integer('n_prakarya');
-            $table->integer('n_bjawa');
-            $table->integer('sakit');
-            $table->integer('izin');
-            $table->integer('tanpa_ket');
+            $table->string('sikap_spiritual', 25);
+            $table->string('sikap_sosial', 25);
+            $table->smallInteger('n_agama');
+            $table->smallInteger('n_ppkn');
+            $table->smallInteger('n_bindo');
+            $table->smallInteger('n_mat');
+            $table->smallInteger('n_ipa');
+            $table->smallInteger('n_ips');
+            $table->smallInteger('n_bing');
+            $table->smallInteger('n_seni');
+            $table->smallInteger('n_penjas');
+            $table->smallInteger('n_prakarya');
+            $table->smallInteger('n_bjawa');
+            $table->smallInteger('sakit'); // Kehadiran
+            $table->smallInteger('izin'); // Kehadiran
+            $table->smallInteger('tanpa_ket'); // Kehadiran
+            $table->text('keputusan'); // Naik kelas atau tidak
             $table->timestamps();
         });
     }

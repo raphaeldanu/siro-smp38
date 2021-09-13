@@ -17,6 +17,7 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">NISN</th>
+          <th scope="col">NIS</th>
           <th scope="col">Nama</th>
           <th scope="col">Action</th>
         </tr>
@@ -26,6 +27,7 @@
         <tr>
           <td>{{ $loop->iteration }}</td>
           <td>{{ $student->nisn }}</td>
+          <td>{{ $student->nis }}</td>
           <td>{{ $student->nama }}</td>
           <td>
             <a href="/dashboard/students/" class="badge bg-info"><span data-feather="eye"></span> </a>

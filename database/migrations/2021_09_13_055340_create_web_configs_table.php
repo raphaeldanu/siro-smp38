@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStudentsTable extends Migration
+class CreateWebConfigsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateStudentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('students', function (Blueprint $table) {
+        Schema::create('web_configs', function (Blueprint $table) {
             $table->id();
-            $table->string('nisn', 10)->unique();
-            $table->string('nis', 6)->unique();
-            $table->string('nama', 150);
-            $table->smallInteger('tahun_masuk')->nullable();
+            $table->boolean('tampil_nilai');
+            $table->date('tanggal_pengumuman');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('students');
+        Schema::dropIfExists('web_configs');
     }
 }
