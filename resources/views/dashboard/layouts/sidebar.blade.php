@@ -13,6 +13,18 @@
           Siswa
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link {{ Request::is('dashboard/reports*') ? 'active' : ''}}" href="/dashboard/reports">
+          <span data-feather="file-text"></span>
+          Students Reports
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ Request::is('dashboard/imports*') ? 'active' : ''}}" href="/dashboard/imports">
+          <span data-feather="file-plus"></span>
+          Import Data
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
