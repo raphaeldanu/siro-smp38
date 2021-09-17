@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\StudentReportImport;
 use App\Models\StudentReport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class StudentReportController extends Controller
 {
@@ -14,7 +16,9 @@ class StudentReportController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.import.index', [
+            'title' => "File Import"
+        ]);
     }
 
     /**
@@ -35,7 +39,8 @@ class StudentReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Excel::import(new StudentReportImport, request()->file('dataraport'));
+        return redirect()->route('admin.dashboard');
     }
 
     /**

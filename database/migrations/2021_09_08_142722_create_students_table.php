@@ -18,7 +18,6 @@ class CreateStudentsTable extends Migration
             $table->string('nisn', 10)->unique();
             $table->string('nis', 6)->unique();
             $table->string('nama', 150);
-            $table->smallInteger('tahun_masuk')->nullable();
             $table->timestamps();
         });
     }
