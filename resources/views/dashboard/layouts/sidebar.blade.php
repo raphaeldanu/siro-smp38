@@ -20,7 +20,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('dashboard/import') ? 'active' : ''}}" href="/dashboard/imports">
+        <a class="nav-link {{ Request::is('dashboard/import') ? 'active' : ''}}" href="/dashboard/import">
           <span data-feather="file-plus"></span>
           Import Data
         </a>

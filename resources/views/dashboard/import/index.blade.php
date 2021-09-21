@@ -6,7 +6,7 @@
 </div>
 
 <div class="col-lg-8">
-  <form method="post" action="/dashboard/posts" enctype="multipart/form-data">
+  <form method="post" action="/dashboard/import" enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
       <label for="dataraport" class="form-label">Pilih File yang akan di import</label>
