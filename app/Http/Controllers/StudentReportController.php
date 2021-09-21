@@ -51,7 +51,10 @@ class StudentReportController extends Controller
      */
     public function show(StudentReport $studentReport)
     {
-        //
+        return view('dashboard.reports.detail', [
+            'student' => $studentReport->student(),
+            'report' => $studentReport
+        ]);
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\StudentReport;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -49,7 +50,11 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        // 
+        return view('dashboard.students.show', [
+            'title' => 'Detail Siswa',
+            'student' => $student,
+            'reports' => $student->reports
+        ]);
     }
 
     /**

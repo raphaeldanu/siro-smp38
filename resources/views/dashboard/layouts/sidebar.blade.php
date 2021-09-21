@@ -14,12 +14,6 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('dashboard/reports*') ? 'active' : ''}}" href="/dashboard/reports">
-          <span data-feather="file-text"></span>
-          Students Reports
-        </a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard/import') ? 'active' : ''}}" href="/dashboard/import">
           <span data-feather="file-plus"></span>
           Import Data

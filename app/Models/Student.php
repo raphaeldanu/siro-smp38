@@ -12,9 +12,8 @@ class Student extends Model
     protected $guarded = ['id'];
 
     // Untuk eager loading student dengan student report yang sesuai
-    protected $with = ['studentReports'];
 
-    public function studentReports()
+    public function reports()
     {
         return $this->hasMany(StudentReport::class);
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentReportController;
+use App\Models\StudentReport;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -29,7 +30,10 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::middleware(['auth'])->group(function () {
   Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+
+  Route::get('/dashboard/reports/{studentReport}', [StudentReportController::class, 'show']);
   Route::resource('/dashboard/students', StudentController::class);
+
   Route::get('/dashboard/import', [StudentReportController::class, 'index'])->name('admin.import');
   Route::post('/dashboard/import', [StudentReportController::class, 'store']);
 });

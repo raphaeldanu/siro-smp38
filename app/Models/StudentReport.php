@@ -11,8 +11,6 @@ class StudentReport extends Model
 
     protected $guarded = ['id'];
 
-    protected $with = ['student'];
-
     /**
      * Get the student that owns the StudentReport
      *
