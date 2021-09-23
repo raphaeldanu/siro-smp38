@@ -7,13 +7,28 @@
 <div class="container-fluid px-0">
   <div class="card border-0">
     <div class="card-body px-0 pt-0">
-      <h5 class="card-title">{{ $student->nama }}</h5>
+      <h5 class="card-title">{{ $student->nama }}</h5> 
       <p class="card-text">
-        NISN : {{ $student->nisn }} <br>
-        NIS : {{ $student->nis }} <br>
-        Tahun Pelajaran : {{ $report->tahun_pelajaran }} <br>
-        Kelas : {{ $report->kelas . $report->rombel }} <br>
-        Semester : {{ $report->semester }} <br>
+        <div class="row">
+          <div class="col-lg-2">NISN</div>
+          <div class="col-lg-10">: {{ $student->nisn }}</div>
+        </div>
+        <div class="row">
+          <div class="col-lg-2">NIS</div>
+          <div class="col-lg-10">: {{ $student->nis }}</div>
+        </div>
+        <div class="row">
+          <div class="col-lg-2">Tahun Pelajaran</div>
+          <div class="col-lg-10">: {{ $report->tahun_pelajaran }}</div>
+        </div>
+        <div class="row">
+          <div class="col-lg-2">Kelas</div>
+          <div class="col-lg-10">: {{ $report->kelas . $report->rombel }}</div>
+        </div>
+        <div class="row">
+          <div class="col-lg-2">Semester</div>
+          <div class="col-lg-10">: {{ $report->semester }}</div>
+        </div>  
       </p>
     </div> 
   </div>
