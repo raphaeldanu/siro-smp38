@@ -2,7 +2,21 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Siswa</h1>
+  <h1 class="h2">Raport Siswa</h1>
+</div>
+<div class="container-fluid px-0">
+  <div class="card border-0">
+    <div class="card-body px-0 pt-0">
+      <h5 class="card-title">{{ $student->nama }}</h5>
+      <p class="card-text">
+        NISN : {{ $student->nisn }} <br>
+        NIS : {{ $student->nis }} <br>
+        Tahun Pelajaran : {{ $report->tahun_pelajaran }} <br>
+        Kelas : {{ $report->kelas . $report->rombel }} <br>
+        Semester : {{ $report->semester }} <br>
+      </p>
+    </div> 
+  </div>
 </div>
 <div class="table-responsive col-lg-8">
   @if (session()->has('success'))
