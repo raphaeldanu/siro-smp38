@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         return view('search', [
             'title' => 'Cari Siswa',
-            'student' => Student::where('nisn', 'like', request('search'))->orWhere('nama', 'like', '%'.request('search').'%')->limit(1)->with('reports')->get()
+            'student' => Student::where('nisn', 'like', request('search'))->orWhere('nama', 'like', '%'.request('search').'%')->get()
         ]);
     }
 
