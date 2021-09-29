@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('container')
+{{ dd($student) }}
 <div class="container-fluid col-lg-8 my-3">
     <h2 class="text-center mb-3">Cari Siswa</h2>
     <form action="/search" method="get">

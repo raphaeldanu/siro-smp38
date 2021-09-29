@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,6 +11,14 @@ class HomeController extends Controller
     {
         return view('home', [
             'title' => 'Home'
+        ]);
+    }
+
+    public function search()
+    {
+        return view('search', [
+            'title' => 'Cari Siswa',
+            'student' => Student::where('nisn', 'like', request('search'))->orWhere('nama', 'like', '%'.request('search').'%')->limit(1)->with('reports')->get()
         ]);
     }
 

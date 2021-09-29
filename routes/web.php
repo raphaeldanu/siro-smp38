@@ -22,6 +22,8 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/search', [HomeController::class, 'search']);
+
 Route::get('/siswa', [HomeController::class, 'siswa']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
