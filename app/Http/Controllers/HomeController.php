@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\StudentReport;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -33,6 +34,24 @@ class HomeController extends Controller
     {
         return view('about', [
             'title' => 'About'
+        ]);
+    }
+
+    public function siswaDetail(Student $student)
+    {
+        return view('detail', [
+            'title' => 'Detail Siswa',
+            'student' => $student,
+            'reports' => $student->reports()->get()
+        ]);
+    }
+
+    public function siswaRaport(StudentReport $report)
+    {
+        return view('report', [
+            'title' => 'Raport Siswa',
+            'student' => $report->student,
+            'report' => $report
         ]);
     }
 }

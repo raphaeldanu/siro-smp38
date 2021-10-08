@@ -37,6 +37,7 @@ class CreateStudentReportsTable extends Migration
             $table->smallInteger('izin'); // Kehadiran
             $table->smallInteger('tanpa_ket'); // Kehadiran
             $table->text('keputusan'); // Naik kelas atau tidak
+            $table->boolean('status');
             $table->timestamps();
         });
     }

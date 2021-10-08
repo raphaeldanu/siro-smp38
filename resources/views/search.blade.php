@@ -10,6 +10,7 @@
     </form>
 </div>
 <div class="container-fluid col-lg-8">
+  @if ($students->isNotEmpty())
     <table class="table table-hover">
         <thead>
           <tr class="table-dark">
@@ -20,6 +21,7 @@
           </tr>
         </thead>
         <tbody>
+         
             @foreach ($students as $student)
             <tr>
               <th scope="row">{{ $loop->iteration }}</th>
@@ -27,16 +29,13 @@
               <td>{{ $student->nama }}</td>
               <td>
                 <a href="/students/{{ $student->id }}" class="badge bg-info text-light"><span data-feather="eye"></span> </a>
-                <a href="/students/{{ $student->id }}/edit" class="badge bg-warning text-light"><span data-feather="edit"></span> </a>
-                <form action="/students/" method="post" class="d-inline">
-                  @method('delete')
-                  @csrf
-                  <button class="badge bg-danger border-0 text-light" type="submit" onclick="return confirm('Are you sure?')"><span data-feather="x-circle"></span></button>
-                </form>
               </td>
             </tr>
             @endforeach
         </tbody>
       </table>
+  @else
+    <h3>Nama atau NIM tidak ditemukan</h3>  
+  @endif
 </div>
 @endsection
