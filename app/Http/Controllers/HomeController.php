@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use App\Models\StudentReport;
+use App\Models\StudentUn;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -52,6 +53,15 @@ class HomeController extends Controller
             'title' => 'Raport Siswa',
             'student' => $report->student,
             'report' => $report
+        ]);
+    }
+
+    public function siswaUn(StudentUn $un)
+    {
+        return view('un', [
+            'title' => 'UN Siswa',
+            'student' => $un->student,
+            'un' => $un
         ]);
     }
 }

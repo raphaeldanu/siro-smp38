@@ -20,6 +20,7 @@ class CreateStudentUnsTable extends Migration
             $table->smallInteger('n_mat');
             $table->smallInteger('n_ipa');
             $table->smallInteger('n_bing');
+            $table->boolean('keputusan');
             $table->boolean('status');
             $table->timestamps();
         });

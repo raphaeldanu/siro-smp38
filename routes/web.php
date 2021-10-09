@@ -28,6 +28,7 @@ Route::get('/siswa', [HomeController::class, 'siswa']);
 
 Route::get('/students/{student}', [HomeController::class, 'siswaDetail']);
 Route::get('/reports/{report}', [HomeController::class, 'siswaRaport']);
+Route::get('/uns/{un}', [HomeController::class, 'siswaUn']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
