@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\UnImports;
 use App\Models\StudentUn;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class StudentUnController extends Controller
 {
@@ -14,7 +16,10 @@ class StudentUnController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.import.index', [
+            'title' => "Import File UN",
+            'link' => "import-un"
+        ]);
     }
 
     /**
@@ -36,6 +41,8 @@ class StudentUnController extends Controller
     public function store(Request $request)
     {
         //
+        Excel::import(new UnImports, request()->file('dataraport'));
+        return redirect()->route('admin.dashboard');
     }
 
     /**

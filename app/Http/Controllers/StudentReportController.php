@@ -17,7 +17,8 @@ class StudentReportController extends Controller
     public function index()
     {
         return view('dashboard.import.index', [
-            'title' => "File Import"
+            'title' => "Import File Raport",
+            'link' => "import-raport"
         ]);
     }
 

@@ -43,7 +43,8 @@ class HomeController extends Controller
         return view('detail', [
             'title' => 'Detail Siswa',
             'student' => $student,
-            'reports' => $student->reports()->get()
+            'reports' => $student->reports()->get(),
+            'un' => $student->un
         ]);
     }
 

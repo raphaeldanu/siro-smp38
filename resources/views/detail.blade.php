@@ -25,13 +25,10 @@
       </div> 
     </div>
   </div>
+  <div class="col-lg-8 m-auto">
+    <h5>Raport</h5>
+  </div>
   <div class="table-responsive col-lg-8 m-auto">
-    @if (session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-      {{ session('success') }}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    @endif
     <table class="table table-striped table-sm">
       <thead>
         <tr>
@@ -54,5 +51,35 @@
         @endforeach
       </tbody>
     </table>
+  </div>
+  @if ($un->isNotEmpty())    
+  <div class="col-lg-8 m-auto">
+    <h5>Nilai UN</h5>
+  </div>
+  <div class="table-responsive col-lg-8 m-auto">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Kelas</th>
+          <th scope="col">Semester</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach ($un as $un)
+        <tr>
+          <td>{{ $un->iteration }}</td>
+          <td>{{ $un->kelas }}</td>
+          <td>{{ $un->semester }}</td>
+          <td>
+            <a href="/un/{{ $un->id }}" class="badge bg-info"><span data-feather="eye"></span> </a>
+          </td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
+  </div>
+  @endif
 </div>
 @endsection

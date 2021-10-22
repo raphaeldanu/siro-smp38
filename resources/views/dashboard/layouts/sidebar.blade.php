@@ -14,9 +14,15 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('dashboard/import') ? 'active' : ''}}" href="/dashboard/import">
+        <a class="nav-link {{ Request::is('dashboard/import-raport') ? 'active' : ''}}" href="/dashboard/import-raport">
           <span data-feather="file-plus"></span>
-          Import Data
+          Import Raport
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ Request::is('dashboard/import-un') ? 'active' : ''}}" href="/dashboard/import-un">
+          <span data-feather="file-plus"></span>
+          Import Nilai UN
         </a>
       </li>
     </ul>

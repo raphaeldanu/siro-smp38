@@ -17,4 +17,9 @@ class Student extends Model
     {
         return $this->hasMany(StudentReport::class);
     }
+
+    public function un()
+    {
+        return $this->hasOne(StudentUn::class);
+    }
 }
