@@ -28,7 +28,10 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.students.create', [
+            'title' => 'Input Siswa',
+            'judul' => 'Tambah Siswa'
+        ]);
     }
 
     /**
@@ -39,7 +42,15 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nisn' => 'required|unique:students',
+            'nis' => 'required|unique:students',
+            'nama' => 'required'
+        ]);
+
+        Student::create($validatedData);
+
+        return redirect('/dashboard/students')->with('success', 'Siswa Berhasil ditambahkan');
     }
 
     /**
@@ -65,7 +76,12 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return view('dashboard.students.edit',
+            [
+                'title' => 'Edit Siswa',
+                'student' => $student
+            ]
+        );
     }
 
     /**
@@ -77,17 +93,35 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        $rules = [
+            'nama' => 'required'
+        ];
+
+        if ($request->nisn != $student->nisn) {
+            $rules['nisn'] = 'required|unique:students';
+        }
+
+        if ($request->nis != $student->nis) {
+            $rules['nis'] = 'required|unique:students';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        Student::where('id', $student->id)->update($validatedData);
+
+        return redirect('/dashboard/students')->with('success', 'Siswa berhasil di edit');
     }
 
     /**
      * Remove the specified resource from storage.
-     *
+     
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
     public function destroy(Student $student)
     {
-        //
+        Student::destroy($student->id);
+        
+        return redirect('/dashboard/students')->with('success', 'Siswa berhasil di hapus');
     }
 }
