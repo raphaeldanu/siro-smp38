@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Imports\StudentReportImport;
+use App\Models\Student;
 use App\Models\StudentReport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -27,9 +28,12 @@ class StudentReportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Student $student)
     {
-        //
+        return view('dashboard.reports.create', [
+            'judul' => 'Tambah Raport Siswa',
+            'student' => $student
+        ]);
     }
 
     /**

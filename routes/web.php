@@ -41,6 +41,8 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/dashboard/reports/{studentReport}', [StudentReportController::class, 'show']);
   Route::resource('/dashboard/students', StudentController::class);
 
+  Route::get('/dashboard/reports/create/{student}', [StudentReportController::class, 'create']);
+
   Route::get('/dashboard/import-raport', [StudentReportController::class, 'index'])->name('admin.import.raport');
   Route::post('/dashboard/import-raport', [StudentReportController::class, 'store']);
 
