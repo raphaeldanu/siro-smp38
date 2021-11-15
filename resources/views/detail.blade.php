@@ -9,7 +9,7 @@
             <h4 class="card-title">{{ $student->nama }}</h4>
           </div>
           <div class="col-2">
-            <a href="/dashboard/students/" class="btn btn-danger">Kembali</a>
+            <a href="/siswa/" class="btn btn-danger">Kembali</a>
           </div>
         </div>
         <p class="card-text">
@@ -39,6 +39,9 @@
         </tr>
       </thead>
       <tbody>
+        @if (is_null($reports))
+        <h5>Nilai Belum Di Input</h5>
+        @endif
         @foreach ($reports as $report)
         <tr>
           <td>{{ $loop->iteration }}</td>
@@ -52,7 +55,7 @@
       </tbody>
     </table>
   </div>
-  @if ($un->isNotEmpty())    
+  @isset($un)   
   <div class="col-lg-8 m-auto">
     <h5>Nilai UN</h5>
   </div>
@@ -80,6 +83,6 @@
       </tbody>
     </table>
   </div>
-  @endif
+  @endisset
 </div>
 @endsection

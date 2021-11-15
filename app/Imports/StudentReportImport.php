@@ -57,6 +57,7 @@ class StudentReportImport implements ToCollection, WithHeadingRow
                     'izin' => $row['izin'],
                     'tanpa_ket' => $row['tanpa_ket'],
                     'keputusan' => $row['keputusan'],
+                    'status' => $row['status']
                 ]);
             }
         }

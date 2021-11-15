@@ -95,4 +95,17 @@ class StudentReportController extends Controller
     {
         //
     }
+
+    public function storeOne(Request $request)
+    {
+        $validatedData = $request->validate([
+            'student_id' => 'required|numeric',
+            'semester' => 'required|numeric',
+
+        ]);
+
+        Student::create($validatedData);
+
+        return redirect('/dashboard/students/');
+    }
 }

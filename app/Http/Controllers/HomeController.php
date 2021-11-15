@@ -27,7 +27,8 @@ class HomeController extends Controller
     public function siswa()
     {
         return view('siswa', [
-            'title' => 'Siswa'
+            'title' => 'Siswa',
+            'students' => Student::paginate(25)
         ]);
     }
 

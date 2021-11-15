@@ -64,7 +64,8 @@ class StudentController extends Controller
         return view('dashboard.students.show', [
             'title' => 'Detail Siswa',
             'student' => $student,
-            'reports' => $student->reports
+            'reports' => $student->reports,
+            'un' => $student->un,
         ]);
     }
 
@@ -78,7 +79,7 @@ class StudentController extends Controller
     {
         return view('dashboard.students.edit',
             [
-                'title' => 'Edit Siswa',
+                'judul' => 'Edit Siswa',
                 'student' => $student
             ]
         );
