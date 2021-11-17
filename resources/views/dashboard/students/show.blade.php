@@ -29,6 +29,9 @@
       </div> 
     </div>
   </div>
+  <div class="col-lg-8 m-auto">
+    <h5>Nilai Raport</h5>
+  </div>
   <div class="table-responsive col-lg-8">
     @if (session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -65,4 +68,29 @@
       </tbody>
     </table>
   </div>
+  @isset($un)   
+  <div class="col-lg-8">
+    <h5>Nilai UN</h5>
+  </div>
+  <div class="table-responsive col-lg-8">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th scope="col" class="col-3">Bahasa Indonesia</th>
+          <th scope="col" class="col-3">Matematika</th>
+          <th scope="col" class="col-3">IPA</th>
+          <th scope="col" class="col-3">Bahasa Inggris</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ $un->n_bindo }}</td>
+          <td>{{ $un->n_mat }}</td>
+          <td>{{ $un->n_ipa }}</td>
+          <td>{{ $un->n_bing }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  @endisset
 @endsection

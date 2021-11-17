@@ -27,7 +27,11 @@
   </div>
   <div class="col-lg-8 m-auto">
     <h5>Raport</h5>
+    @if ($reports->isEmpty())
+      <h6>Nilai Belum Di Input</h5>
+    @endif 
   </div>
+  @if ($reports->isNotEmpty())
   <div class="table-responsive col-lg-8 m-auto">
     <table class="table table-striped table-sm">
       <thead>
@@ -39,9 +43,7 @@
         </tr>
       </thead>
       <tbody>
-        @if (is_null($reports))
-        <h5>Nilai Belum Di Input</h5>
-        @endif
+        
         @foreach ($reports as $report)
         <tr>
           <td>{{ $loop->iteration }}</td>
@@ -55,6 +57,7 @@
       </tbody>
     </table>
   </div>
+  @endif
   @isset($un)   
   <div class="col-lg-8 m-auto">
     <h5>Nilai UN</h5>
@@ -63,23 +66,19 @@
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Kelas</th>
-          <th scope="col">Semester</th>
-          <th scope="col">Action</th>
+          <th scope="col" class="col-3">Bahasa Indonesia</th>
+          <th scope="col" class="col-3">Matematika</th>
+          <th scope="col" class="col-3">IPA</th>
+          <th scope="col" class="col-3">Bahasa Inggris</th>
         </tr>
       </thead>
       <tbody>
-        @foreach ($un as $un)
         <tr>
-          <td>{{ $un->iteration }}</td>
-          <td>{{ $un->kelas }}</td>
-          <td>{{ $un->semester }}</td>
-          <td>
-            <a href="/un/{{ $un->id }}" class="badge bg-info"><span data-feather="eye"></span> </a>
-          </td>
+          <td>{{ $un->n_bindo }}</td>
+          <td>{{ $un->n_mat }}</td>
+          <td>{{ $un->n_ipa }}</td>
+          <td>{{ $un->n_bing }}</td>
         </tr>
-        @endforeach
       </tbody>
     </table>
   </div>
