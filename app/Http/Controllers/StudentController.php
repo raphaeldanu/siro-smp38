@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use App\Models\StudentReport;
+use App\Models\StudentUn;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -121,6 +122,9 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
+        StudentUn::where('student_id', $student->id)->delete();
+        StudentReport::where('student_id', $student->id)->delete();
+
         Student::destroy($student->id);
         
         return redirect('/dashboard/students')->with('success', 'Siswa berhasil di hapus');

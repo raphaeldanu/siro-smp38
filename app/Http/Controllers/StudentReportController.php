@@ -6,6 +6,8 @@ use App\Imports\StudentReportImport;
 use App\Models\Student;
 use App\Models\StudentReport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Maatwebsite\Excel\Facades\Excel;
 
 class StudentReportController extends Controller
@@ -57,6 +59,7 @@ class StudentReportController extends Controller
     public function show(StudentReport $studentReport)
     {
         return view('dashboard.reports.detail', [
+            
             'student' => $studentReport->student,
             'report' => $studentReport
         ]);
@@ -70,7 +73,11 @@ class StudentReportController extends Controller
      */
     public function edit(StudentReport $studentReport)
     {
-        //
+        return view('dashboard.reports.edit', [
+            'judul' => 'Edit Raport',
+            'student' => $studentReport->student,
+            'report' => $studentReport
+        ]);
     }
 
     /**
@@ -82,7 +89,62 @@ class StudentReportController extends Controller
      */
     public function update(Request $request, StudentReport $studentReport)
     {
-        //
+        $rules = [
+            'student_id' => 'required|numeric',
+            'rombel' => 'required|string',
+            'tahun_pelajaran' => 'required|string',
+            'sikap_spiritual' => 'required',
+            'sikap_sosial' => 'required',
+            'n_agama' => 'required|numeric|between:0,100',
+            'n_ppkn' => 'required|numeric|between:0,100',
+            'n_bindo' => 'required|numeric|between:0,100',
+            'n_mat' => 'required|numeric|between:0,100',
+            'n_ipa' => 'required|numeric|between:0,100',
+            'n_ips' => 'required|numeric|between:0,100',
+            'n_bing' => 'required|numeric|between:0,100',
+            'n_seni' => 'required|numeric|between:0,100',
+            'n_penjas' => 'required|numeric|between:0,100',
+            'n_prakarya' => 'required|numeric|between:0,100',
+            'n_bjawa' => 'required|numeric|between:0,100',
+            'sakit' => 'required|numeric',
+            'izin' => 'required|numeric',
+            'tanpa_ket' => 'required|numeric',
+            'keputusan' => 'required',
+            'status' => 'required|boolean'
+        ];
+
+        $kelas = $request->kelas;
+        $semester = $request->kelas;
+        $student_id = $request->student_id;
+
+        if ($request->kelas != $studentReport->kelas) {
+            $rules['kelas'] = [
+                'required',
+                Rule::unique('student_reports')
+                ->where(function ($query) use($kelas, $student_id, $semester){
+                    return $query->where('kelas', $kelas)
+                    ->where('student_id', $student_id)
+                    ->where('semester', $semester);
+                }),
+            ];
+        }
+
+        if ($request->semester != $studentReport->semester) {
+            $rules['semester'] = [
+                'required',
+                Rule::unique('student_reports')
+                ->where(function ($query) use($kelas, $student_id, $semester){
+                    return $query->where('kelas', $kelas)
+                    ->where('student_id', $student_id)
+                    ->where('semester', $semester);
+                }),
+            ];
+        }
+
+        $validatedData = $request->validate($rules);
+        StudentReport::where('id', $studentReport->id)->update($validatedData);
+
+        return redirect('/dashboard/students/'.$student_id)->with('Succes', "Raport berhasil diperbaharui");
     }
 
     /**
@@ -93,18 +155,61 @@ class StudentReportController extends Controller
      */
     public function destroy(StudentReport $studentReport)
     {
-        //
+        $student_id = $studentReport->student_id;
+        StudentReport::destroy($studentReport->id);
+
+        return redirect('/dashboard/students/'.$student_id)->with('success', "Data Raport Berhasil dihapus");
     }
 
     public function storeOne(Request $request)
     {
+        $student_id = $request->student_id;
+        $kelas = $request->kelas;
+        $semester = $request->semester;
         $validatedData = $request->validate([
             'student_id' => 'required|numeric',
-            'semester' => 'required|numeric',
-
+            'kelas' => [
+                'required',
+                Rule::unique('student_reports')
+                ->where(function ($query) use($kelas, $student_id, $semester){
+                    return $query->where('kelas', $kelas)
+                    ->where('student_id', $student_id)
+                    ->where('semester', $semester);
+                }),
+            ],
+            'rombel' => 'required|string',
+            'semester' => [
+                'required',
+                Rule::unique('student_reports')
+                ->where(function ($query) use($kelas, $student_id, $semester){
+                    return $query->where('kelas', $kelas)
+                    ->where('student_id', $student_id)
+                    ->where('semester', $semester);
+                }),
+            ],
+            'tahun_pelajaran' => 'required|string',
+            'sikap_spiritual' => 'required',
+            'sikap_sosial' => 'required',
+            'n_agama' => 'required|numeric|between:0,100',
+            'n_ppkn' => 'required|numeric|between:0,100',
+            'n_bindo' => 'required|numeric|between:0,100',
+            'n_mat' => 'required|numeric|between:0,100',
+            'n_ipa' => 'required|numeric|between:0,100',
+            'n_ips' => 'required|numeric|between:0,100',
+            'n_bing' => 'required|numeric|between:0,100',
+            'n_seni' => 'required|numeric|between:0,100',
+            'n_penjas' => 'required|numeric|between:0,100',
+            'n_prakarya' => 'required|numeric|between:0,100',
+            'n_bjawa' => 'required|numeric|between:0,100',
+            'sakit' => 'required|numeric',
+            'izin' => 'required|numeric',
+            'tanpa_ket' => 'required|numeric',
+            'keputusan' => 'required',
+            'status' => 'required|boolean'
         ]);
+        
 
-        Student::create($validatedData);
+        StudentReport::create($validatedData);
 
         return redirect('/dashboard/students/');
     }
