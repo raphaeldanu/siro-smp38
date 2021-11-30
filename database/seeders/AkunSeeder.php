@@ -16,14 +16,14 @@ class AkunSeeder extends Seeder
     {
         $users = collect([
             [
-                'username' => 'admin',
+                'username' => 'admin2',
                 'name' => "Raphael Adhimas",
-                'password' => bcrypt('12345')
+                'password' => bcrypt('20331871')
             ],
             [
-                'username' => 'admin2',
+                'username' => 'admin',
                 'name' => "Pak Yogi",
-                'password' => bcrypt('12345')
+                'password' => bcrypt('20331871')
             ],
         ]);
 

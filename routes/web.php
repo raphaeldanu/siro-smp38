@@ -52,7 +52,7 @@ Route::middleware(['auth'])->group(function () {
   //UN
   Route::get('/dashboard/un/create/{student}', [StudentUnController::class, 'create']);
   Route::get('/dashboard/un/{studentUn}/edit', [StudentUnController::class, 'edit']);
-  Route::post('/dashboard/un/', [StudentUnController::class, 'storeOne']);
+  Route::post('/dashboard/un', [StudentUnController::class, 'storeOne']);
   Route::put('/dashboard/un/{studentUn}', [StudentUnController::class, 'update']);
   Route::delete('/dashboard/un/{studentUn}', [StudentUnController::class, 'destroy']);
 

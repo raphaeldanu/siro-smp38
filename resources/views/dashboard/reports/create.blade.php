@@ -275,8 +275,8 @@
         <div class="col-sm-10">
           <select class="form-select @error('status') is-invalid @enderror" aria-label="Pilih Status" name="status" id="status">
             <option value="{{ old('status') }}" selected>Pilih Salah Satu {{ '('.old('status').')' }} </option>
-            <option value="0">Tidak Bermasalah</option>
-            <option value="1">Bermasalah</option>
+            <option value="1">Tidak Bermasalah</option>
+            <option value="0">Bermasalah</option>
           </select>
           @error('status')
               <div class="invalid-feedback">

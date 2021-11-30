@@ -44,9 +44,9 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nisn' => 'required|unique:students',
-            'nis' => 'required|unique:students',
-            'nama' => 'required'
+            'nisn' => 'required|numeric|unique:students',
+            'nis' => 'required|numeric|unique:students',
+            'nama' => 'required|string'
         ]);
 
         Student::create($validatedData);
@@ -96,15 +96,15 @@ class StudentController extends Controller
     public function update(Request $request, Student $student)
     {
         $rules = [
-            'nama' => 'required'
+            'nama' => 'required|string'
         ];
 
         if ($request->nisn != $student->nisn) {
-            $rules['nisn'] = 'required|unique:students';
+            $rules['nisn'] = 'required|numeric|unique:students';
         }
 
         if ($request->nis != $student->nis) {
-            $rules['nis'] = 'required|unique:students';
+            $rules['nis'] = 'required|numeric|unique:students';
         }
 
         $validatedData = $request->validate($rules);

@@ -12,19 +12,34 @@
       <div class="mb-3 row">
         <label for="nisn " class="col-sm-2 col-form-label">NISN</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="nisn" name="nisn" value="{{ $student->nisn }}">
+          <input type="text" class="form-control @error('nisn') is-invalid @enderror" id="nisn" name="nisn" value="{{ $student->nisn }}">
+          @error('nisn')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
         </div>
       </div>
       <div class="mb-3 row">
         <label for="nis" class="col-sm-2 col-form-label">NIS</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="nis" name="nis" value="{{ $student->nis }}">
+          <input type="text" class="form-control @error('nis') is-invalid @enderror" id="nis" name="nis" value="{{ $student->nis }}">
+          @error('nis')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
         </div>
       </div>
       <div class="mb-3 row">
         <label for="nama" class="col-sm-2 col-form-label">Nama</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="nama" name="nama" value="{{ $student->nama }}">
+          <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ $student->nama }}">
+          @error('nama')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
         </div>
       </div>
       <div class="col-12">

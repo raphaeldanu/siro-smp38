@@ -50,7 +50,11 @@
           <td>{{ $report->kelas }}</td>
           <td>{{ $report->semester }}</td>
           <td>
-            <a href="/reports/{{ $report->id }}" class="badge bg-info"><span data-feather="eye"></span> </a>
+            @if ($report->status == 1)
+              <a href="/reports/{{ $report->id }}" class="badge bg-info"><span data-feather="eye"></span> </a>
+            @else
+              Raport Bermasalah
+            @endif
           </td>
         </tr>
         @endforeach
