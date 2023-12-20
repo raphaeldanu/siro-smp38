@@ -5,11 +5,11 @@
     <div class="card border-0">
       <div class="card-body px-0 pt-0">
         <div class="row">
-          <div class="col-10">
+          <div class="col-lg-10 col-9">
             <h4 class="card-title">{{ $student->nama }}</h4>
           </div>
-          <div class="col-2">
-            <a href="/siswa/" class="btn btn-danger">Kembali</a>
+          <div class="col-lg-2 col-3">
+            <a href="/home/" class="btn btn-danger">Kembali</a>
           </div>
         </div>
         <p class="card-text">

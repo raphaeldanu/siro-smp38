@@ -22,17 +22,28 @@ class CreateStudentReportsTable extends Migration
             $table->string('tahun_pelajaran', 10);
             $table->string('sikap_spiritual', 25);
             $table->string('sikap_sosial', 25);
-            $table->smallInteger('n_agama');
-            $table->smallInteger('n_ppkn');
-            $table->smallInteger('n_bindo');
-            $table->smallInteger('n_mat');
-            $table->smallInteger('n_ipa');
-            $table->smallInteger('n_ips');
-            $table->smallInteger('n_bing');
-            $table->smallInteger('n_seni');
-            $table->smallInteger('n_penjas');
-            $table->smallInteger('n_prakarya');
-            $table->smallInteger('n_bjawa');
+            $table->smallInteger('n_agama_p');
+            $table->smallInteger('n_agama_k');
+            $table->smallInteger('n_ppkn_p');
+            $table->smallInteger('n_ppkn_k');
+            $table->smallInteger('n_bindo_p');
+            $table->smallInteger('n_bindo_k');
+            $table->smallInteger('n_mat_p');
+            $table->smallInteger('n_mat_k');
+            $table->smallInteger('n_ipa_p');
+            $table->smallInteger('n_ipa_k');
+            $table->smallInteger('n_ips_p');
+            $table->smallInteger('n_ips_k');
+            $table->smallInteger('n_bing_p');
+            $table->smallInteger('n_bing_k');
+            $table->smallInteger('n_seni_p');
+            $table->smallInteger('n_seni_k');
+            $table->smallInteger('n_penjas_p');
+            $table->smallInteger('n_penjas_k');
+            $table->smallInteger('n_prakarya_p');
+            $table->smallInteger('n_prakarya_k');
+            $table->smallInteger('n_bjawa_p');
+            $table->smallInteger('n_bjawa_k');
             $table->smallInteger('sakit'); // Kehadiran
             $table->smallInteger('izin'); // Kehadiran
             $table->smallInteger('tanpa_ket'); // Kehadiran

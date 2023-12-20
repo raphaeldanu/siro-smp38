@@ -10,11 +10,6 @@
           <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
           </li>
       </ul>
-      <ul class="navbar-nav">
-          <li class="nav-item">
-          <a class="nav-link {{ Request::is('/siswa') ? 'active' : '' }}" href="/siswa">Siswa</a>
-          </li>
-      </ul>
       <ul class="navbar-nav ms-auto">
           @auth
           <li class="nav-item dropdown">

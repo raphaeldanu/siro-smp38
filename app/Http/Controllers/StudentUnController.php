@@ -43,7 +43,7 @@ class StudentUnController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function import(Request $request)
     {
         //Memanggil fungsi dari Un Import untuk menginput file yang dikirim ke form
         Excel::import(new UnImports, $request->file('dataraport'));
@@ -115,7 +115,7 @@ class StudentUnController extends Controller
         return redirect('/dashboard/students/'.$student_id);
     }
 
-    public function storeOne(Request $request)
+    public function store(Request $request)
     {
         //Save 1 Nilai
         $student_id = $request->student_id;

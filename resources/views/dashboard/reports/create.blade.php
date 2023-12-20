@@ -79,9 +79,9 @@
             <option value="Kurang Baik">Kurang Baik</option>
           </select>
           @error('sikap_spiritual')
-              <div class="invalid-feedback">
-                {{ $message }}
-              </div>
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
           @enderror
         </div>
       </div>
@@ -95,6 +95,30 @@
             <option value="Kurang Baik">Kurang Baik</option>
           </select>
           @error('sikap_sosial')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+          @enderror
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-sm-4">Nilai</div>
+        <div class="col-sm-4">Pengetahuan</div>
+        <div class="col-sm-4">Keterampilan</div>
+      </div>
+      <div class="mb-3 row">
+        <label for="n_agama_p" class="col-sm-4 col-form-label">Nilai Agama</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_agama_p') is-invalid @enderror" id="n_agama_p" name="n_agama_p" value="{{ old('n_agama_p') }}">
+          @error('n_agama_p')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_agama_k') is-invalid @enderror" id="n_agama_k" name="n_agama_k" value="{{ old('n_agama_k') }}">
+          @error('n_agama_k')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>
@@ -102,10 +126,18 @@
         </div>
       </div>
       <div class="mb-3 row">
-        <label for="n_agama" class="col-sm-3 col-form-label">Nilai Agama</label>
-        <div class="col-sm-9">
-          <input type="number" class="form-control @error('n_agama') is-invalid @enderror" id="n_agama" name="n_agama" value="{{ old('n_agama') }}">
-          @error('n_agama')
+        <label for="n_ppkn_p" class="col-sm-4 col-form-label">Nilai PPKn</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_ppkn_p') is-invalid @enderror" id="n_ppkn_p" name="n_ppkn_p" value="{{ old('n_ppkn_p') }}">
+          @error('n_ppkn_p')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_ppkn_k') is-invalid @enderror" id="n_ppkn_k" name="n_ppkn_k" value="{{ old('n_ppkn_k') }}">
+          @error('n_ppkn_k')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>
@@ -113,10 +145,18 @@
         </div>
       </div>
       <div class="mb-3 row">
-        <label for="n_ppkn" class="col-sm-3 col-form-label">Nilai PPKn</label>
-        <div class="col-sm-9">
-          <input type="number" class="form-control @error('n_ppkn') is-invalid @enderror" id="n_ppkn" name="n_ppkn" value="{{ old('n_ppkn') }}">
-          @error('n_ppkn')
+        <label for="n_bindo_p" class="col-sm-4 col-form-label">Nilai Bahasa Indonesia</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_bindo_p') is-invalid @enderror" id="n_bindo_p" name="n_bindo_p" value="{{ old('n_bindo_p') }}">
+          @error('n_bindo_p')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_bindo_k') is-invalid @enderror" id="n_bindo_k" name="n_bindo_k" value="{{ old('n_bindo_k') }}">
+          @error('n_bindo_k')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>
@@ -124,10 +164,18 @@
         </div>
       </div>
       <div class="mb-3 row">
-        <label for="n_bindo" class="col-sm-3 col-form-label">Nilai Bahasa Indonesia</label>
-        <div class="col-sm-9">
-          <input type="number" class="form-control @error('n_bindo') is-invalid @enderror" id="n_bindo" name="n_bindo" value="{{ old('n_bindo') }}">
-          @error('n_bindo')
+        <label for="n_mat_p" class="col-sm-4 col-form-label">Nilai Matematika</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_mat_p') is-invalid @enderror" id="n_mat_p" name="n_mat_p" value="{{ old('n_mat_p') }}">
+          @error('n_mat_p')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_mat_k') is-invalid @enderror" id="n_mat_k" name="n_mat_k" value="{{ old('n_mat_k') }}">
+          @error('n_mat_k')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>
@@ -135,10 +183,18 @@
         </div>
       </div>
       <div class="mb-3 row">
-        <label for="n_mat" class="col-sm-3 col-form-label">Nilai Matematika</label>
-        <div class="col-sm-9">
-          <input type="number" class="form-control @error('n_mat') is-invalid @enderror" id="n_mat" name="n_mat" value="{{ old('n_mat') }}">
-          @error('n_mat')
+        <label for="n_ipa_p" class="col-sm-4 col-form-label">Nilai IPA</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_ipa_p') is-invalid @enderror" id="n_ipa_p" name="n_ipa_p" value="{{ old('n_ipa_p') }}">
+          @error('n_ipa_p')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_ipa_k') is-invalid @enderror" id="n_ipa_k" name="n_ipa_k" value="{{ old('n_ipa_k') }}">
+          @error('n_ipa_k')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>
@@ -146,10 +202,18 @@
         </div>
       </div>
       <div class="mb-3 row">
-        <label for="n_ipa" class="col-sm-3 col-form-label">Nilai IPA</label>
-        <div class="col-sm-9">
-          <input type="number" class="form-control @error('n_ipa') is-invalid @enderror" id="n_ipa" name="n_ipa" value="{{ old('n_ipa') }}">
-          @error('n_ipa')
+        <label for="n_ips_p" class="col-sm-4 col-form-label">Nilai IPS</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_ips_p') is-invalid @enderror" id="n_ips_p" name="n_ips_p" value="{{ old('n_ips_p') }}">
+          @error('n_ips_p')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_ips_k') is-invalid @enderror" id="n_ips_k" name="n_ips_k" value="{{ old('n_ips_k') }}">
+          @error('n_ips_k')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>
@@ -157,10 +221,18 @@
         </div>
       </div>
       <div class="mb-3 row">
-        <label for="n_ips" class="col-sm-3 col-form-label">Nilai IPS</label>
-        <div class="col-sm-9">
-          <input type="number" class="form-control @error('n_ips') is-invalid @enderror" id="n_ips" name="n_ips" value="{{ old('n_ips') }}">
-          @error('n_ips')
+        <label for="n_bing_p" class="col-sm-4 col-form-label">Nilai Bahasa Inggris</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_bing_p') is-invalid @enderror" id="n_bing_p" name="n_bing_p" value="{{ old('n_bing_p') }}">
+          @error('n_bing_p')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_bing_k') is-invalid @enderror" id="n_bing_k" name="n_bing_k" value="{{ old('n_bing_k') }}">
+          @error('n_bing_k')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>
@@ -168,10 +240,18 @@
         </div>
       </div>
       <div class="mb-3 row">
-        <label for="n_bing" class="col-sm-3 col-form-label">Nilai Bahasa Inggris</label>
-        <div class="col-sm-9">
-          <input type="number" class="form-control @error('n_bing') is-invalid @enderror" id="n_bing" name="n_bing" value="{{ old('n_bing') }}">
-          @error('n_bing')
+        <label for="n_seni_p" class="col-sm-4 col-form-label">Nilai Seni Budaya</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_seni_p') is-invalid @enderror" id="n_seni_p" name="n_seni_p" value="{{ old('n_seni_p') }}">
+          @error('n_seni_p')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_seni_k') is-invalid @enderror" id="n_seni_k" name="n_seni_k" value="{{ old('n_seni_k') }}">
+          @error('n_seni_k')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>
@@ -179,10 +259,18 @@
         </div>
       </div>
       <div class="mb-3 row">
-        <label for="n_seni" class="col-sm-3 col-form-label">Nilai Seni Budaya</label>
-        <div class="col-sm-9">
-          <input type="number" class="form-control @error('n_seni') is-invalid @enderror" id="n_seni" name="n_seni" value="{{ old('n_seni') }}">
-          @error('n_seni')
+        <label for="n_penjas_p" class="col-sm-4 col-form-label">Nilai Penjasorkes</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_penjas_p') is-invalid @enderror" id="n_penjas_p" name="n_penjas_p" value="{{ old('n_penjas_p') }}">
+          @error('n_penjas_p')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_penjas_k') is-invalid @enderror" id="n_penjas_k" name="n_penjas_k" value="{{ old('n_penjas_k') }}">
+          @error('n_penjas_k')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>
@@ -190,10 +278,18 @@
         </div>
       </div>
       <div class="mb-3 row">
-        <label for="n_penjas" class="col-sm-3 col-form-label">Nilai Penjasorkes</label>
-        <div class="col-sm-9">
-          <input type="number" class="form-control @error('n_penjas') is-invalid @enderror" id="n_penjas" name="n_penjas" value="{{ old('n_penjas') }}">
-          @error('n_penjas')
+        <label for="n_prakarya_p" class="col-sm-4 col-form-label">Nilai Prakarya</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_prakarya_p') is-invalid @enderror" id="n_prakarya_p" name="n_prakarya_p" value="{{ old('n_prakarya_p') }}">
+          @error('n_prakarya_p')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_prakarya_k') is-invalid @enderror" id="n_prakarya_k" name="n_prakarya_k" value="{{ old('n_prakarya_k') }}">
+          @error('n_prakarya_k')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>
@@ -201,21 +297,18 @@
         </div>
       </div>
       <div class="mb-3 row">
-        <label for="n_prakarya" class="col-sm-3 col-form-label">Nilai Prakarya</label>
-        <div class="col-sm-9">
-          <input type="number" class="form-control @error('n_prakarya') is-invalid @enderror" id="n_prakarya" name="n_prakarya" value="{{ old('n_prakarya') }}">
-          @error('n_prakarya')
+        <label for="n_bjawa_p" class="col-sm-4 col-form-label">Nilai Bahasa Jawa</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_bjawa_p') is-invalid @enderror" id="n_bjawa_p" name="n_bjawa_p" value="{{ old('n_bjawa_p') }}">
+          @error('n_bjawa_p')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>
           @enderror
         </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="n_bjawa" class="col-sm-3 col-form-label">Nilai Bahasa Jawa</label>
-        <div class="col-sm-9">
-          <input type="number" class="form-control @error('n_bjawa') is-invalid @enderror" id="n_bjawa" name="n_bjawa" value="{{ old('n_bjawa') }}">
-          @error('n_bjawa')
+        <div class="col-sm-4">
+          <input type="number" class="form-control @error('n_bjawa_k') is-invalid @enderror" id="n_bjawa_k" name="n_bjawa_k" value="{{ old('n_bjawa_k') }}">
+          @error('n_bjawa_k')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>

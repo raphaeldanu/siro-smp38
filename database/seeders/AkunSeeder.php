@@ -16,14 +16,9 @@ class AkunSeeder extends Seeder
     {
         $users = collect([
             [
-                'username' => 'admin2',
-                'name' => "Raphael Adhimas",
-                'password' => bcrypt('20331871')
-            ],
-            [
                 'username' => 'admin',
-                'name' => "Pak Yogi",
-                'password' => bcrypt('20331871')
+                'name' => "Raphael Adhimas",
+                'password' => bcrypt('123456789')
             ],
         ]);
 

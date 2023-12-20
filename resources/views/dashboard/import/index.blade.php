@@ -10,7 +10,7 @@
     @csrf
     <div class="mb-3">
       <label for="dataraport" class="form-label">Pilih File yang akan di import</label>
-      <input class="form-control" type="file" id="dataraport" name="dataraport">
+      <input class="form-control" type="file" id="dataraport" name="dataraport" required>
     </div>    
     <button type="submit" class="btn btn-primary mb-3">Import</button>
   </form>

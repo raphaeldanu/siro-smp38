@@ -44,7 +44,7 @@ class StudentReportController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function import(Request $request)
     {
         Excel::import(new StudentReportImport, request()->file('dataraport'));
         return redirect()->route('admin.dashboard');
@@ -95,17 +95,28 @@ class StudentReportController extends Controller
             'tahun_pelajaran' => 'required|string',
             'sikap_spiritual' => 'required',
             'sikap_sosial' => 'required',
-            'n_agama' => 'required|numeric|between:0,100',
-            'n_ppkn' => 'required|numeric|between:0,100',
-            'n_bindo' => 'required|numeric|between:0,100',
-            'n_mat' => 'required|numeric|between:0,100',
-            'n_ipa' => 'required|numeric|between:0,100',
-            'n_ips' => 'required|numeric|between:0,100',
-            'n_bing' => 'required|numeric|between:0,100',
-            'n_seni' => 'required|numeric|between:0,100',
-            'n_penjas' => 'required|numeric|between:0,100',
-            'n_prakarya' => 'required|numeric|between:0,100',
-            'n_bjawa' => 'required|numeric|between:0,100',
+            'n_agama_p' => 'required|numeric|between:0,100',
+            'n_ppkn_p' => 'required|numeric|between:0,100',
+            'n_bindo_p' => 'required|numeric|between:0,100',
+            'n_mat_p' => 'required|numeric|between:0,100',
+            'n_ipa_p' => 'required|numeric|between:0,100',
+            'n_ips_p' => 'required|numeric|between:0,100',
+            'n_bing_p' => 'required|numeric|between:0,100',
+            'n_seni_p' => 'required|numeric|between:0,100',
+            'n_penjas_p' => 'required|numeric|between:0,100',
+            'n_prakarya_p' => 'required|numeric|between:0,100',
+            'n_bjawa_p' => 'required|numeric|between:0,100',
+            'n_agama_k' => 'required|numeric|between:0,100',
+            'n_ppkn_k' => 'required|numeric|between:0,100',
+            'n_bindo_k' => 'required|numeric|between:0,100',
+            'n_mat_k' => 'required|numeric|between:0,100',
+            'n_ipa_k' => 'required|numeric|between:0,100',
+            'n_ips_k' => 'required|numeric|between:0,100',
+            'n_bing_k' => 'required|numeric|between:0,100',
+            'n_seni_k' => 'required|numeric|between:0,100',
+            'n_penjas_k' => 'required|numeric|between:0,100',
+            'n_prakarya_k' => 'required|numeric|between:0,100',
+            'n_bjawa_k' => 'required|numeric|between:0,100',
             'sakit' => 'required|numeric',
             'izin' => 'required|numeric',
             'tanpa_ket' => 'required|numeric',
@@ -161,7 +172,7 @@ class StudentReportController extends Controller
         return redirect('/dashboard/students/'.$student_id)->with('success', "Data Raport Berhasil dihapus");
     }
 
-    public function storeOne(Request $request)
+    public function store(Request $request)
     {
         $student_id = $request->student_id;
         $kelas = $request->kelas;
@@ -190,17 +201,28 @@ class StudentReportController extends Controller
             'tahun_pelajaran' => 'required|string',
             'sikap_spiritual' => 'required',
             'sikap_sosial' => 'required',
-            'n_agama' => 'required|numeric|between:0,100',
-            'n_ppkn' => 'required|numeric|between:0,100',
-            'n_bindo' => 'required|numeric|between:0,100',
-            'n_mat' => 'required|numeric|between:0,100',
-            'n_ipa' => 'required|numeric|between:0,100',
-            'n_ips' => 'required|numeric|between:0,100',
-            'n_bing' => 'required|numeric|between:0,100',
-            'n_seni' => 'required|numeric|between:0,100',
-            'n_penjas' => 'required|numeric|between:0,100',
-            'n_prakarya' => 'required|numeric|between:0,100',
-            'n_bjawa' => 'required|numeric|between:0,100',
+            'n_agama_p' => 'required|numeric|between:0,100',
+            'n_ppkn_p' => 'required|numeric|between:0,100',
+            'n_bindo_p' => 'required|numeric|between:0,100',
+            'n_mat_p' => 'required|numeric|between:0,100',
+            'n_ipa_p' => 'required|numeric|between:0,100',
+            'n_ips_p' => 'required|numeric|between:0,100',
+            'n_bing_p' => 'required|numeric|between:0,100',
+            'n_seni_p' => 'required|numeric|between:0,100',
+            'n_penjas_p' => 'required|numeric|between:0,100',
+            'n_prakarya_p' => 'required|numeric|between:0,100',
+            'n_bjawa_p' => 'required|numeric|between:0,100',
+            'n_agama_k' => 'required|numeric|between:0,100',
+            'n_ppkn_k' => 'required|numeric|between:0,100',
+            'n_bindo_k' => 'required|numeric|between:0,100',
+            'n_mat_k' => 'required|numeric|between:0,100',
+            'n_ipa_k' => 'required|numeric|between:0,100',
+            'n_ips_k' => 'required|numeric|between:0,100',
+            'n_bing_k' => 'required|numeric|between:0,100',
+            'n_seni_k' => 'required|numeric|between:0,100',
+            'n_penjas_k' => 'required|numeric|between:0,100',
+            'n_prakarya_k' => 'required|numeric|between:0,100',
+            'n_bjawa_k' => 'required|numeric|between:0,100',
             'sakit' => 'required|numeric',
             'izin' => 'required|numeric',
             'tanpa_ket' => 'required|numeric',
